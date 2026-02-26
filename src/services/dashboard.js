@@ -144,7 +144,7 @@ export async function getDashboard(inicio, fim) {
   // ── Formas de pagamento ────────────────────────────────────────────────────
   const paymentMap = {}
   pagPeriodo.forEach(p => { paymentMap[p.forma] = (paymentMap[p.forma] ?? 0) + p.valor })
-  const FORMAS_NEG = ["vale presente", "vale"]
+  const FORMAS_NEG = ["vale presente"]
   const payments = Object.entries(paymentMap)
     .map(([label, value]) => ({
       label,
