@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --pink:        #E8A0B4;
+  --pink-light:  #F9E4EC;
+  --pink-dark:   #C97090;
+  --gold:        #C9A84C;
+  --gold-light:  #F0DFA0;
+  --gold-dark:   #A0822A;
+  --black:       #1A1A1A;
+  --white:       #FAFAFA;
+
+  --bg:          #FDF8FA;
+  --surface:     #FFFFFF;
+  --surface-2:   #FBF3F6;
+  --border:      rgba(232, 160, 180, 0.22);
+  --border-2:    rgba(232, 160, 180, 0.38);
+
+  --success:     #3D7A52;
+  --danger:      #B84040;
+  --muted:       #9A8080;
+  --muted-2:     #C8B0B8;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+
+  --radius:    14px;
+  --radius-sm: 8px;
+  --gap:       16px;
+  --sidebar:   230px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+a    { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }

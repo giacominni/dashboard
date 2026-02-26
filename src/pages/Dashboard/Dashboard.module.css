@@ -1,0 +1,167 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border-2);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.greeting {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* Filtro de período */
+.periodFilter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: 24px;
+  padding: 8px 16px;
+  box-shadow: 0 1px 4px rgba(232,160,180,0.08);
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.dateInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.dateSep {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* KPIs — 5 colunas */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--gap);
+}
+
+/* 2 colunas */
+.row3 {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--gap);
+}
+
+/* 2 colunas — primeira maior */
+.row2wide {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: var(--gap);
+}
+
+/* 2 colunas iguais */
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--pink-light);
+  border-top-color: var(--pink-dark);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loadingText {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.error {
+  background: rgba(184,64,64,0.08);
+  border: 1px solid rgba(184,64,64,0.2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--danger);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Tablet (max 1024px) ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  .kpiGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .row2wide {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile (max 768px) ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .greeting {
+    font-size: 22px;
+  }
+
+  .periodFilter {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .row3,
+  .row2wide,
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mobile pequeno (max 480px) ───────────────────────────── */
+@media (max-width: 480px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}

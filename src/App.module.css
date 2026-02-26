@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  margin-left: var(--sidebar);
+  flex: 1;
+  padding: 34px 38px;
+  max-width: 1400px;
+}
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0;
+    padding: 16px 16px 80px; /* espaço para bottom nav */
+  }
+}

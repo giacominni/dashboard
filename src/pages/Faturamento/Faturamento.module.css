@@ -1,0 +1,277 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* ── Cabeçalho ─────────────────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border-2);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ── Filtro de período ─────────────────────────────────────── */
+.periodFilter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border-2);
+  border-radius: 24px;
+  padding: 8px 16px;
+  box-shadow: 0 1px 4px rgba(232,160,180,0.08);
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+
+.dateInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.dateInput::-webkit-calendar-picker-indicator { opacity: 0.5; cursor: pointer; }
+
+.dateSep { font-size: 11px; color: var(--muted); }
+
+/* ── KPI grid ──────────────────────────────────────────────── */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--gap);
+}
+
+.kpiCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 1px 6px rgba(232,160,180,0.06);
+}
+
+.kpiTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kpiLabel {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.kpiIcon {
+  width: 28px; height: 28px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.kpiValue {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1.1;
+}
+
+.kpiDelta {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.pos { color: var(--success); }
+.neg { color: var(--danger);  }
+
+/* ── Cards genéricos ───────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 1px 6px rgba(232,160,180,0.06);
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.chartWrap { width: 100%; }
+
+/* ── Tabela ────────────────────────────────────────────────── */
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tableHeader .cardTitle { margin-bottom: 0; }
+
+.search {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border-2);
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--black);
+  background: var(--surface-2);
+  outline: none;
+  width: 180px;
+}
+
+.search:focus { border-color: var(--pink); }
+
+.tableWrap { overflow-x: auto; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border-2);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.table tbody tr:hover { background: var(--surface-2); }
+
+.right { text-align: right; }
+
+.dateCell {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.totalCell {
+  font-weight: 600;
+  color: var(--gold-dark) !important;
+}
+
+.danger { color: var(--danger) !important; }
+
+.rowDev { background: rgba(184,64,64,0.03); }
+
+.footerRow {
+  background: var(--surface-2);
+  border-top: 2px solid var(--border-2);
+}
+
+.footerRow td { padding: 12px 14px; }
+
+.empty {
+  text-align: center;
+  padding: 40px !important;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ── Tooltip ───────────────────────────────────────────────── */
+.tooltip {
+  background: var(--black);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.tooltipLabel { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.tooltipValue { font-size: 13px; font-weight: 600; color: var(--white); }
+
+/* ── Loading / erro ────────────────────────────────────────── */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid var(--pink-light);
+  border-top-color: var(--pink-dark);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loadingText { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+.error {
+  background: rgba(184,64,64,0.08);
+  border: 1px solid rgba(184,64,64,0.2);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--danger);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Responsivo ────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .kpiGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 22px; }
+  .periodFilter { width: 100%; justify-content: center; }
+  .kpiGrid { grid-template-columns: repeat(2, 1fr); }
+  .search { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .kpiGrid { grid-template-columns: 1fr; }
+}
