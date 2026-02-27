@@ -1,4 +1,5 @@
-import { CreditCard, Banknote, Zap, Gift } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { CreditCard, Banknote, Zap, Gift, UtensilsCrossed } from 'lucide-react'
 import { currency } from '../utils/format'
 import styles from './PaymentMethods.module.css'
 
@@ -8,25 +9,26 @@ const PAYMENT_ICONS = {
   'Dinheiro':          Banknote,
   'PIX':               Zap,
   'Vale Presente':     Gift,
+  'Vale Refeição':     UtensilsCrossed,
 }
 
 export default function PaymentMethods({ data }) {
+  const navigate = useNavigate()
   const total = data.reduce((sum, p) => sum + p.value, 0)
 
   return (
     <div className={styles.card}>
       <div className={styles.header}>
         <h3 className={styles.title}>Formas de Pagamento</h3>
-        <span className={styles.link}>Detalhes →</span>
+        <span className={styles.link} onClick={() => navigate('/faturamento')}>Detalhes →</span>
       </div>
-
       <ul className={styles.list}>
         {data.map((p) => {
           const Icon = PAYMENT_ICONS[p.label] || CreditCard
           return (
             <li key={p.label} className={styles.row}>
               <div className={styles.left}>
-                <span className={styles.icon}>
+                <span className={`${styles.icon} ${p.value < 0 ? styles.iconNeg : ''}`}>
                   <Icon size={14} />
                 </span>
                 <span className={styles.name}>{p.label}</span>
@@ -38,7 +40,6 @@ export default function PaymentMethods({ data }) {
           )
         })}
       </ul>
-
       <div className={styles.total}>
         <span className={styles.totalLabel}>Total Recebido</span>
         <span className={styles.totalValue}>{currency(total)}</span>

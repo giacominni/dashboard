@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutDashboard, DollarSign, Users } from 'lucide-react'
+import { LayoutDashboard, DollarSign, Users, ShoppingBag } from 'lucide-react'
 import styles from './Sidebar.module.css'
 
 const NAV = [
   { to: '/dashboard',   icon: LayoutDashboard, label: 'Dashboard'   },
   { to: '/faturamento', icon: DollarSign,      label: 'Faturamento' },
   { to: '/clientes',    icon: Users,           label: 'Clientes'    },
+  { to: '/produtos',    icon: ShoppingBag,     label: 'Produtos'    },
 ]
 
 export default function Sidebar() {
@@ -13,7 +14,7 @@ export default function Sidebar() {
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
         <p className={styles.logoEyebrow}>Painel de Gestão</p>
-        <h1 className={styles.logoText}>Sul Mídia<br />Software</h1>
+        <h1 className={styles.logoText}>Use Mais<br />Soluções</h1>
         <p className={styles.logoSub}>até VM</p>
       </div>
       <nav className={styles.nav}>
